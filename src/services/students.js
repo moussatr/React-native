@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 export const login = async (data) => {
     try {
-        const res = await axios.post('http://192.168.208.79:4500/students/login', data);
+        const res = await axios.post('http://172.23.144.1:4500/students/login', data);
         console.log(res.data);
         return res.data;
     } catch (error) {
@@ -16,7 +16,7 @@ export const login = async (data) => {
 
 export const register = async (data) => {
     try {
-        const res = await axios.post('http://192.168.208.79:4500/students/register', data);
+        const res = await axios.post('http://172.23.144.1:4500/students/register', data);
         console.log(res.data);
         return res.data;
     } catch (error) {
@@ -32,7 +32,7 @@ export const register = async (data) => {
 export const getMeApi1 = async (data) => {
     try {
         const res = await axios.get(
-            'http://192.168.208.79:4500/students/me',data
+            'http://172.23.144.1:4500/students/me',data
         );
         return res.data;
     } catch (error) {
@@ -44,7 +44,7 @@ export const getMeApi1 = async (data) => {
 export const getMeApi = async (data) => {
     try {
         const res = await axios.get(
-            'http://192.168.208.79:4500/students',data
+            'http://172.23.144.1:4500/students',data
         );
         return res.data;
     } catch (error) {

@@ -8,7 +8,7 @@ const Profile = ({navigation}) => {
     useEffect(() => {
         const getMe = async () => {
             console.log('getMe')
-            const res = await getMeApi('http://192.168.208.79:4500/students')
+            const res = await getMeApi('http://172.23.144.1:4500/students')
             console.log(res);
             setMe(res);
         }
@@ -23,10 +23,10 @@ const Profile = ({navigation}) => {
 
             <>
                 <View>
-                    <Text>Vos cours</Text>
+                        
                     <View>
-                {me.map(student => <Text key={student._id}> {student.firstname} </Text>)}
-        </View>
+                        {me.map(student => <Text key={student._id}> {student._id} </Text>)}
+                    </View>
                 </View>
             </>
 

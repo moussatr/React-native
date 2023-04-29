@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
+
 import CompteNavigationScreen from './compte/Navigator';
 import HomeNavigationScreen from './Home/Navigator'
 
@@ -17,13 +19,21 @@ const AppScreen = ({ navigation }) => {
                 tabBarActiveTintColor: '#fdc86b',
                 tabBarInactiveTintColor: 'white',
             })} >
-                <Tab.Screen name="HomeNavigation" component={ HomeNavigationScreen } options={{
-                    headerShown: false,
-                    title: 'Home'
+                <Tab.Screen 
+                    name="HomeNavigation" 
+                    component={ HomeNavigationScreen } 
+                    options={{
+                        headerShown: false,
+                        title: 'Home',
+                  
                 }} />
-                <Tab.Screen name="CompteNavigation" component={ CompteNavigationScreen } options={{
+                <Tab.Screen 
+                    name= "CompteNavigation"
+                    component={ CompteNavigationScreen } 
+                    options={{
                     headerShown: false,
-                    title: 'Account'
+                    title: "Account"
+                    
                 }} />
             </Tab.Navigator>
         </NavigationContainer>

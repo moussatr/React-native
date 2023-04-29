@@ -1,37 +1,47 @@
 import { useEffect, useState } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import { getLessons } from '../../services/lessons';
+import { getClasse } from '../../services/classes';
 
 import { login } from '../../services/students';
 
 const Home = ({navigation}) => {
-    // const [sessions, setSessions] = useState([]);
-    const [lessons, setLessons] = useState([]);
+  
+    const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        // const getData = async () => {
-        //     const res = await getSessions();
-        //     console.log(res);
-        //     setSessions(res);
-        // }
-
-        // getData();
+       
         const getData = async () => {
-            const res = await getLessons('http://192.168.208.79:4500/lessons');
+            const res = await getClasse('http://172.23.144.1:4500/classes');
             console.log("test  test test ");
             console.log(res);
-            setLessons(res);
+            setClasses(res);
         }
 
         getData();
     }, []);
+
+    
+  const onPressHander= async (event) => {
+    
+  
+    navigation.navigate('Student');
+    
+       
+  }
 
     return <View>
         <Text>Liste des cours</Text>
         <View>
          
         <View>
-                {lessons.map(lesson => <Text key={lesson._id}> {lesson.label} </Text>)}
+                {classes.map(classe => <Text key={classe._id}>
+                    <TouchableOpacity  onPress={onPressHander}>
+                      <Text > {classe.name} </Text>
+                     </TouchableOpacity>
+
+                    
+                     </Text>)}
         </View>
                
         </View>
